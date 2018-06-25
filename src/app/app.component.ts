@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+
+interface INavItem {
+  path: String;
+  name: String;
+}
 
 @Component({
   selector: 'app-root',
@@ -6,5 +11,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'My App';
+  scrolling = false;
+  progressMode = 'determinate';
+  navItems: INavItem[] = [];
+
+  @HostListener('window:scroll', ['$event']) onscroll($event) {
+    if (window.scrollY === 0) {
+      this.scrolling = false;
+    } else {
+      this.scrolling = true;
+    }
+  }
 }

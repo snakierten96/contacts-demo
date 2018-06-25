@@ -1,0 +1,47 @@
+@import '../variables';
+
+$bar-height: 64px;
+
+.container {
+  margin: auto;
+  max-width: 1028px;
+}
+
+.mat-progress-bar.fixedtop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(0, 0, 0,.12);
+  transition: box-shadow .2s ease-in-out;
+
+  &.inkline {
+    height: 3px;
+  }
+
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &.scrolling {
+    @include mat-elevation(3);
+  }
+
+  .mat-tab-nav-bar {
+    height: $bar-height;
+    border-bottom: none;
+
+    .mat-tab-link {
+      line-height: $bar-height;
+      height: $bar-height;
+    }
+  }
+}
+
+.content.main {
+  padding-top: $bar-height;
+  height: 1000px;
+}
