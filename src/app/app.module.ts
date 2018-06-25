@@ -13,6 +13,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { UserService } from './shared/user.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -29,7 +31,9 @@ import { AppComponent } from './app.component';
     MatProgressBarModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

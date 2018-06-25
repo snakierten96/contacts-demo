@@ -1,6 +1,8 @@
-# Remock
+# Contacts Demo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+
+Based upon [external repo demonstration](https://github.com/darrenmothersele/angular5-resolve-data) And article [Resolving Data](https://medium.com/@dazcyril/resolving-data-in-angular-2-4-and-5-refactoring-components-and-moving-to-ngrx-store-15e15d8be3dd)
 
 ## Development server
 
