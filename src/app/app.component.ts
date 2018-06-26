@@ -14,7 +14,12 @@ export class AppComponent {
   title = 'My App';
   scrolling = false;
   progressMode = 'determinate';
-  navItems: INavItem[] = [];
+  navItems: INavItem[] = [
+    {
+      path: '/users',
+      name: 'Users'
+    }
+  ];
 
   @HostListener('window:scroll', ['$event']) onscroll($event) {
     if (window.scrollY === 0) {

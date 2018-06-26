@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { User } from '../../model/user.model';
 
 @Component({
   selector: 'app-contact-list',
@@ -7,9 +12,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactListComponent implements OnInit {
 
-  constructor() { }
+  users$: Observable<User[]>;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.users$ = this.route.data.pipe( map(({ users }) => users) );
   }
 
 }

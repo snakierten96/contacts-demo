@@ -1,0 +1,11 @@
+.half {
+  padding: 5px;
+}
+
+.container {
+  padding: 5px;
+
+  & > * {
+    width: 100%;
+  }
+}

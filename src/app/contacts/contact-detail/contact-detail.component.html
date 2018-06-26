@@ -1,0 +1,24 @@
+<div fxLayout="row">
+  <mat-card fxFlex="50" class="half">
+    <mat-card-header>
+      <mat-card-title>{{ user.name }}</mat-card-title>
+      <mat-card-subtitle>@{{ user.username }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="container">
+        <mat-form-field>
+          <input matInput placeholder="Email" [value]="user.email" [disabled]="disabled" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Phone" [value]="user.phone" [disabled]="disabled" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Website" [value]="user.website" [disabled]="disabled" />
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <div fxFlex="50" class="half">
+    <pre>{{ user | json }}</pre>
+  </div>
+</div>
