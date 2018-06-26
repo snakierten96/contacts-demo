@@ -1,7 +1,5 @@
 @import '../variables';
 
-$bar-height: 64px;
-
 .container {
   margin: auto;
   max-width: 1028px;
@@ -16,6 +14,7 @@ $bar-height: 64px;
 
   &.inkline {
     height: 3px;
+    z-index: $ceiling;
   }
 
 }
@@ -25,7 +24,7 @@ $bar-height: 64px;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10000;
+  z-index: $ceiling;
 
   &.scrolling {
     @include mat-elevation(3);
@@ -44,5 +43,5 @@ $bar-height: 64px;
 
 .content.main {
   padding-top: $bar-height;
-  height: 1000px;
+  //height: 1000px;
 }

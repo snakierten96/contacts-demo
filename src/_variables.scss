@@ -4,3 +4,6 @@ $app-primary: mat-palette($mat-indigo);
 $app-accent: mat-palette($mat-pink, A200, A100, A400);
 
 $app-theme: mat-light-theme($app-primary, $app-accent);
+
+$bar-height: 64px;
+$ceiling: 10000;

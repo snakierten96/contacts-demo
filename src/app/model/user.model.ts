@@ -2,12 +2,12 @@ import { Address } from './address.model';
 import { Company } from './company.model';
 
 export interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
+  id: Number;
+  name: String;
+  username: String;
+  email: String;
   address: Address;
-  phone: string;
-  website: string;
+  phone: String;
+  website: String;
   company: Company;
 }
