@@ -1,4 +1,6 @@
-<div fxLayout="row wrap">
+<div fxLayout="row wrap" *ngIf="!(isLoading$ | async); else loading">
   <app-contact-card fxFlex="33" fxLayoutAlign="space-around center"
     [user]="user" *ngFor="let user of users$ | async"></app-contact-card>
 </div>
+
+<ng-template #loading>Loading users...</ng-template>

@@ -10,16 +10,20 @@ const routes: Routes = [
   {
     path: '',
     component: ContactListComponent,
+    /*
     resolve: {
       users: UserListResolverService
     }
+    */
   },
   {
     path: ':id',
     component: ContactPageComponent,
+    /*
     resolve: {
       user: UserResolverService
     }
+    */
   }
 ];
 
