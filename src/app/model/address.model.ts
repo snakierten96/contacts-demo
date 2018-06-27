@@ -1,10 +1,10 @@
 export interface Address {
-  street: String;
-  suite: String;
-  city: String;
-  zipcode: String;
+  street: string;
+  suite: string;
+  city: string;
+  zipcode: string;
   geo: {
-    lat: String;
-    lng: String;
+    lat: string;
+    lng: string;
   };
 }

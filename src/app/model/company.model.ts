@@ -1,5 +1,5 @@
 export interface Company {
-  name: String;
-  catchPhrase: String;
-  bs: String;
+  name: string;
+  catchPhrase: string;
+  bs: string;
 }

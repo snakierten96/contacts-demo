@@ -2,8 +2,8 @@ import { User } from '../../../model/user.model';
 import * as actions from '../actions/users.actions';
 
 export interface State {
-  loading: Boolean;
-  failed: Boolean;
+  loading: boolean;
+  failed: boolean;
   users: User[];
 }
 

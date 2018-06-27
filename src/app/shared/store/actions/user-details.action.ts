@@ -7,7 +7,7 @@ export const LOAD_FAILURE = '[User details] load failure';
 
 export class LoadAction implements Action {
   readonly type = LOAD;
-  constructor(public id: Number) {}
+  constructor(public id: number) {}
 }
 
 export class LoadSuccessAction implements Action {

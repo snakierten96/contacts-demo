@@ -24,7 +24,7 @@ export class UserService {
       );
   }
 
-  public getUser(id: Number): Observable<User> {
+  public getUser(id: number): Observable<User> {
     return this.http.get<User>(`${this.endpoint}/${id}`)
       .pipe(
         delay(1000),
@@ -32,7 +32,7 @@ export class UserService {
       );
   }
 
-  public getPostsByUser(id: Number): Observable<Post[]> {
+  public getPostsByUser(id: number): Observable<Post[]> {
     const params = new HttpParams().set('userId', `${id}`);
     return this.http.get<Post[]>(`${this.endpoint}/posts`, { params })
       .pipe(
