@@ -1,5 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { FormsModule } from '@angular/forms';
+
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+import { reducers } from '../../store';
+import { UserEffects } from '../../store/effects';
+
+import { UserService } from '../../services/user.service';
+import { UserListResolverService, UserResolverService} from '../../resolver';
+
+import { ContactCardComponent } from '../../components/contact-card';
 import { ContactListComponent } from './contact-list.component';
 
 describe('ContactListComponent', () => {
@@ -8,7 +25,21 @@ describe('ContactListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactListComponent ]
+      imports: [
+        FormsModule,
+        StoreModule.forFeature('contacts', reducers),
+        EffectsModule.forFeature([UserEffects]),
+        FlexLayoutModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+      ],
+      declarations: [ ContactCardComponent, ContactListComponent ],
+      providers: [
+        UserService,
+        UserListResolverService,
+        UserResolverService
+      ]
     })
     .compileComponents();
   }));

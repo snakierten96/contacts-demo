@@ -13,7 +13,7 @@ export interface State extends EntityState<Partial<User>> {
   failed: boolean;
 }
 
-const initialState: State = userAdaptor.getInitialState({
+export const initialState: State = userAdaptor.getInitialState({
   selectedUserId: null,
   loading: false,
   failed: false
