@@ -5,9 +5,9 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { User } from '../../../models/user.model';
-import * as fromStore from '../../../shared/store';
-import * as userActions from '../../../shared/store/actions/user.actions';
+import { User } from '../../models/user.model';
+import * as fromStore from '../../store/index';
+import * as userActions from '../../store/actions/user.actions';
 
 @Component({
   selector: 'app-contact-list',

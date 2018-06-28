@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-import { User } from '../../../models/user.model';
+import { User } from '../../models/user.model';
 
 export const LOAD_SUMMARY = '[User] Load summary';
 export const LOAD_SUMMARY_SUCCESS = '[User] Load summary success';

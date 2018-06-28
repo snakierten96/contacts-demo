@@ -17,15 +17,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { UserService } from './shared/user.service';
-import { reducers } from './shared/store';
-
-import { UserEffects } from './shared/store/effects/user.effects';
 import { environment } from '../environments/environment';
-/*
-import { UsersEffects } from './shared/store/effects/users.effects';
-import { UserDetailsEffects } from './shared/store/effects/user-details.effects';
-*/
 
 @NgModule({
   declarations: [
@@ -42,19 +34,11 @@ import { UserDetailsEffects } from './shared/store/effects/user-details.effects'
     MatListModule,
     MatProgressBarModule,
     AppRoutingModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot({}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    EffectsModule.forRoot([
-      /*
-      UsersEffects,
-      UserDetailsEffects
-      */
-      UserEffects
-    ])
+    EffectsModule.forRoot([])
   ],
-  providers: [
-    UserService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

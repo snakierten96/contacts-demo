@@ -3,8 +3,8 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 
 import { Observable } from 'rxjs';
 
-import { User } from '../../model';
-import { UserService } from '../../shared/user.service';
+import { User } from '../models';
+import { UserService } from '../services/user.service';
 
 @Injectable({
   providedIn: 'root'

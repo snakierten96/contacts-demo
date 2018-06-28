@@ -10,7 +10,11 @@ export const reducers = {
   users: fromUser.reducer
 };
 
-export const getUserState = createFeatureSelector<fromUser.State>('users');
+export const getFeatureState = createFeatureSelector<State>('contacts');
+export const getUserState = createSelector(
+  getFeatureState,
+  (state: State) => state.users
+);
 
 export const {
   selectIds,

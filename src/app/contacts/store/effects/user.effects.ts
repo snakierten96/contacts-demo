@@ -6,7 +6,7 @@ import { Observable, of } from 'rxjs';
 import { map, switchMap, mergeMap, catchError } from 'rxjs/operators';
 
 import * as userActions from '../actions/user.actions';
-import { UserService } from '../../user.service';
+import { UserService } from '../../services/user.service';
 
 @Injectable()
 export class UserEffects {

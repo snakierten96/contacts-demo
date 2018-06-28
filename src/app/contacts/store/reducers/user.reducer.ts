@@ -1,7 +1,7 @@
 import { createEntityAdapter, EntityState } from '@ngrx/entity';
 import { createFeatureSelector } from '@ngrx/store';
 
-import { User } from '../../../models/user.model';
+import { User } from '../../models/user.model';
 import * as actions from '../actions/user.actions';
 
 export const userAdaptor = createEntityAdapter<Partial<User>>({

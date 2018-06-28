@@ -5,10 +5,10 @@ import { Store } from '@ngrx/store';
 
 import { Observable, Subscription } from 'rxjs';
 
-import { User } from '../../../models/user.model';
+import { User } from '../../models/user.model';
 
-import * as fromStore from '../../../shared/store';
-import * as userActions from '../../../shared/store/actions/user.actions';
+import * as fromStore from '../../store/index';
+import * as userActions from '../../store/actions/user.actions';
 
 @Component({
   selector: 'app-contact-page',
