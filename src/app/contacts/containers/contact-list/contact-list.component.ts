@@ -3,10 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 import { User } from '../../models/user.model';
-import * as fromStore from '../../store/index';
+import * as fromStore from '../../store/';
 import * as userActions from '../../store/actions/user.actions';
 
 @Component({
@@ -19,7 +18,7 @@ export class ContactListComponent implements OnInit {
   isLoading$: Observable<Boolean>;
   users$: Observable<Partial<User>[]>;
 
-  constructor(private store: Store<fromStore.State>) { }
+  constructor(private store: Store<fromStore.ContactsState>) { }
 
   ngOnInit() {
     this.isLoading$ = this.store.select(fromStore.getUserLoading);

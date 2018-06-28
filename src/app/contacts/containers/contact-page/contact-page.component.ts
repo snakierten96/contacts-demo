@@ -23,7 +23,7 @@ export class ContactPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private store: Store<fromStore.State>) { }
+    private store: Store<fromStore.ContactsState>) { }
 
   ngOnInit() {
     this.user$ = this.store.select(fromStore.getSelectedUser);
