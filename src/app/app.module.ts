@@ -19,8 +19,13 @@ import { AppComponent } from './app.component';
 
 import { UserService } from './shared/user.service';
 import { reducers } from './shared/store';
+
+import { UserEffects } from './shared/store/effects/user.effects';
+import { environment } from '../environments/environment';
+/*
 import { UsersEffects } from './shared/store/effects/users.effects';
 import { UserDetailsEffects } from './shared/store/effects/user-details.effects';
+*/
 
 @NgModule({
   declarations: [
@@ -38,9 +43,13 @@ import { UserDetailsEffects } from './shared/store/effects/user-details.effects'
     MatProgressBarModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([
+      /*
       UsersEffects,
       UserDetailsEffects
+      */
+      UserEffects
     ])
   ],
   providers: [

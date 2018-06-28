@@ -10,10 +10,8 @@ import { MatInputModule } from '@angular/material/input';
 import { ContactsRoutingModule } from './contacts-routing.module';
 
 import { UserListResolverService, UserResolverService} from './resolver';
-import { ContactListComponent } from './contact-list/contact-list.component';
-import { ContactPageComponent } from './contact-page/contact-page.component';
-import { ContactCardComponent } from './contact-card/contact-card.component';
-import { ContactDetailComponent } from './contact-detail/contact-detail.component';
+import { containers } from './containers';
+import { components } from './components';
 
 @NgModule({
   imports: [
@@ -25,12 +23,7 @@ import { ContactDetailComponent } from './contact-detail/contact-detail.componen
     MatFormFieldModule,
     MatInputModule
   ],
-  declarations: [
-    ContactListComponent,
-    ContactPageComponent,
-    ContactCardComponent,
-    ContactDetailComponent
-  ],
+  declarations: [ ...containers, ...components ],
   providers: [
     UserListResolverService,
     UserResolverService

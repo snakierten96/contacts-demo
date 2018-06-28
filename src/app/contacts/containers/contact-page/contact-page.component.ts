@@ -4,35 +4,33 @@ import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 
 import { Observable, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
 
-import { User } from '../../model/user.model';
+import { User } from '../../../models/user.model';
 
-import * as fromStore from '../../shared/store';
-import * as userDetailsActions from '../../shared/store/actions/user-details.action';
+import * as fromStore from '../../../shared/store';
+import * as userActions from '../../../shared/store/actions/user.actions';
 
 @Component({
   selector: 'app-contact-page',
   templateUrl: './contact-page.component.html',
   styleUrls: ['./contact-page.component.scss']
 })
-export class ContactPageComponent implements OnInit {
+export class ContactPageComponent implements OnInit, OnDestroy {
 
   private subscription$: Subscription;
   isLoading$: Observable<Boolean>;
-  user$: Observable<User>;
+  user$: Observable<Partial<User>>;
 
   constructor(
     private route: ActivatedRoute,
-    private store: Store<fromStore.State>)
-  {
-    this.user$ = this.store.select(fromStore.getUserDetails);
-    this.isLoading$ = this.store.select(fromStore.getUserDetailsLoading);
-  }
+    private store: Store<fromStore.State>) { }
 
   ngOnInit() {
+    this.user$ = this.store.select(fromStore.getSelectedUser);
+    this.isLoading$ = this.store.select(fromStore.getUserLoading);
+
     this.subscription$ = this.route.params.subscribe(({ id }) =>
-      this.store.dispatch(new userDetailsActions.LoadAction(+id))
+      this.store.dispatch(new userActions.LoadDetailAction(+id))
     );
   }
 
