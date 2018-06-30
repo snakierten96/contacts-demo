@@ -79,7 +79,7 @@ describe('UserService', () => {
         }
       ];
 
-      userService.getUsers().subscribe(users => {
+      userService.getUsers().subscribe((users: ArrayLike<User> ) => {
         expect(users.length).toBe(10);
         expect(users).toEqual(<ArrayLike<User>>dummyUsers);
       });
