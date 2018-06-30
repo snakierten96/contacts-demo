@@ -5,7 +5,7 @@ import { ContactListComponent, ContactPageComponent } from './containers';
 
 import { UserListResolverService, UserResolverService } from './resolver';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: ContactListComponent,
